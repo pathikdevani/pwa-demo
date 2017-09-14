@@ -37,9 +37,11 @@ window.addEventListener('load', function () {
         if (navigator.onLine) {
             //online
             $(".offline").removeClass("active");
+            $("body").removeClass("grey-filter");
         } else {
             //offline
             $(".offline").addClass("active");
+            $("body").addClass("grey-filter");
         }
     }
     updateOnlineStatus();

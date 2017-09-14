@@ -1,6 +1,11 @@
 body {
     margin: 0;
     font-family: font-segoe-ui-r;
+    transition: .1s all;
+}
+
+.grey-filter {
+    filter: grayscale(100%);
 }
 
 @header-height : 50px;
@@ -75,6 +80,11 @@ body {
         padding-top: 0px;
         padding-bottom: @gap;
         overflow-y: scroll;
+        >.err-msg {
+            width: 100%;
+            margin-top: 100px;
+            text-align: center;
+        }
         >.item {
             padding-left: @gap/2;
             padding-right: @gap/2;

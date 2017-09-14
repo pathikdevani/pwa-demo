@@ -121,9 +121,11 @@ window.addEventListener('load', function () {
         if (navigator.onLine) {
             //online
             $(".offline").removeClass("active");
+            $("body").removeClass("grey-filter");
         } else {
             //offline
             $(".offline").addClass("active");
+            $("body").addClass("grey-filter");
         }
     }
     updateOnlineStatus();
@@ -189,26 +191,32 @@ var Appshell = function () {
             var tags = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "test";
 
             var $this = this;
-            $this.container.empty($this.container);
+            $this.container.empty();
             _loader2.default.start($this.container);
 
             $.get("https://api.github.com/search/repositories?q=topic:" + tags + "&page=1&per_page=10", function (data) {
-                $.each(data.items, function (i, item) {
-                    var $item = $($this.itemTemplate(item.name, item.description, item.stargazers_count));
-                    $item.on({
-                        click: function click() {
-                            var win = window.open(item.html_url, '_blank');
-                            if (win) {
-                                //Browser has allowed it to be opened
-                                win.focus();
-                            } else {
-                                //Browser has blocked it
-                                alert('Please allow popups for this website');
+
+                if (data.items.length > 0) {
+                    $.each(data.items, function (i, item) {
+                        var $item = $($this.itemTemplate(item.name, item.description, item.stargazers_count));
+                        $item.on({
+                            click: function click() {
+                                if (navigator.onLine) {
+                                    var win = window.open(item.html_url, '_blank');
+                                    if (win) {
+                                        win.focus();
+                                    } else {
+                                        //Browser has blocked it
+                                        alert('Please allow popups for this website');
+                                    }
+                                }
                             }
-                        }
+                        });
+                        $this.container.append($item);
                     });
-                    $this.container.append($item);
-                });
+                } else {
+                    $this.container.append($("<div class=\"err-msg\">We can't find any repository to show.</div>"));
+                }
                 _loader2.default.stop($this.container);
             });
         }
