@@ -177,7 +177,7 @@ var Appshell = function () {
                     var $item = $($this.itemTemplate(item.name, item.description, item.stargazers_count));
                     $item.on({
                         click: function click() {
-                            var win = window.open('http://stackoverflow.com/', '_blank');
+                            var win = window.open(item.html_url, '_blank');
                             if (win) {
                                 //Browser has allowed it to be opened
                                 win.focus();
