@@ -1185,8 +1185,12 @@ body {
 }
 #appshell > .content > .err-msg {
   width: 100%;
-  margin-top: 100px;
+  height: auto;
+  font-size: 16px;
   text-align: center;
+  top: 45%;
+  transform: translateY(-50%);
+  position: relative;
 }
 #appshell > .content > .item {
   padding-left: 5px;
