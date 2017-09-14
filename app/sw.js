@@ -10,16 +10,8 @@ var staticCache = "static";
 var githubCache = "github";
 
 
-window.addEventListener('beforeinstallprompt', function (e) {
-    console.log('beforeinstallprompt Event fired');
-    e.preventDefault();
-    return false;
-});
-
 
 self.addEventListener('install', event => {
-
-
     event.waitUntil(
         caches.open(staticCache)
             .then((cache) => {
