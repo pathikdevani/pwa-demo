@@ -1153,6 +1153,21 @@ body {
   color: grey;
   cursor: pointer;
 }
+#appshell .offline {
+  width: 100%;
+  padding: 12px;
+  background: #424242;
+  position: absolute;
+  bottom: 0;
+  color: yellow;
+  transition: .1s all;
+  opacity: 0;
+  pointer-events: none;
+}
+#appshell .active {
+  opacity: 1;
+  pointer-events: auto;
+}
 #appshell > .content {
   position: relative;
   height: calc(100% -  100px);

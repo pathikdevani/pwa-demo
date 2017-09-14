@@ -27,6 +27,31 @@ if (navigator.serviceWorker.controller) {
 
 
 
+window.addEventListener('load', function () {
+    // debugger;
+    var status = document.getElementById("status");
+    var log = document.getElementById("log");
+
+    function updateOnlineStatus(event) {
+        // debugger;
+        if (navigator.onLine) {
+            //online
+            $(".offline").removeClass("active");
+        } else {
+            //offline
+            $(".offline").addClass("active");
+        }
+    }
+    updateOnlineStatus();
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+});
+
+
+
+
+
+
 $("#search-input").on({
     keyup: function (e) {
         if (e.keyCode == 13) {

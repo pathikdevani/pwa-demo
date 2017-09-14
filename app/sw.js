@@ -10,9 +10,9 @@ var staticCache = "static";
 var githubCache = "github";
 
 
-
 self.addEventListener('install', event => {
-    self.skipWaiting();
+ 
+    
     event.waitUntil(
         caches.open(staticCache)
             .then((cache) => {

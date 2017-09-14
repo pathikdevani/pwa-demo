@@ -77,7 +77,7 @@ var staticCache = "static";
 var githubCache = "github";
 
 self.addEventListener('install', function (event) {
-    self.skipWaiting();
+
     event.waitUntil(caches.open(staticCache).then(function (cache) {
         return cache.addAll(files).then(function () {
             return self.skipWaiting();
