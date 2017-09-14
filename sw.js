@@ -71,7 +71,7 @@
 "use strict";
 
 
-var files = ["/", "/dist/app.css", '/data', "/dist/app.js", '/fonts/segoe-ui/segoeui.ttf', '/libs/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf'];
+var files = ["index.html", "dist/app.css", "dist/app.js", 'fonts/segoe-ui/segoeui.ttf', 'libs/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf'];
 
 var staticCache = "static";
 var githubCache = "github";
