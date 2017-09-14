@@ -5,7 +5,7 @@
 	"background_color": "#673AB7",
 	"display": "standalone",
 	"orientation": "portrait",
-	"start_url": "/pwa-demo",
+	"start_url": "/pwa-demo?utm_source=launcher",
 	// "description": "The app that helps you find Repository on github!",
 	"icons": [
 		{
