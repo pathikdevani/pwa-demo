@@ -76,6 +76,12 @@ var files = ["index.html", "dist/app.css", "dist/app.js", 'fonts/segoe-ui/segoeu
 var staticCache = "static";
 var githubCache = "github";
 
+window.addEventListener('beforeinstallprompt', function (e) {
+    console.log('beforeinstallprompt Event fired');
+    e.preventDefault();
+    return false;
+});
+
 self.addEventListener('install', function (event) {
 
     event.waitUntil(caches.open(staticCache).then(function (cache) {
