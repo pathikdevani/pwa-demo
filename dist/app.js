@@ -94,15 +94,12 @@ var _appshell2 = _interopRequireDefault(_appshell);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var appshell = new _appshell2.default($("#content")); // import $ from 'jquery';
-
+var appshell = new _appshell2.default($("#content"));
 
 appshell.loadAndRender("java");
 
-//first register service worker
-if (navigator.serviceWorker.controller) {
-    console.log('[PWA Builder] active service worker found, no need to register');
-} else {
+//register service worker
+if (navigator.serviceWorker) {
     //Register the ServiceWorker
     navigator.serviceWorker.register('sw.js', {
         scope: './'

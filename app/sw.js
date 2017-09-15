@@ -11,6 +11,7 @@ var githubCache = "github";
 
 
 
+
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(staticCache)

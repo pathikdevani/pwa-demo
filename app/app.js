@@ -1,6 +1,3 @@
-// import $ from 'jquery';
-
-
 import Appshell from "./appshell";
 var appshell = new Appshell($("#content"));
 
@@ -11,10 +8,8 @@ appshell.loadAndRender("java");
 
 
 
-//first register service worker
-if (navigator.serviceWorker.controller) {
-    console.log('[PWA Builder] active service worker found, no need to register')
-} else {
+//register service worker
+if (navigator.serviceWorker) {
     //Register the ServiceWorker
     navigator.serviceWorker.register('sw.js', {
         scope: './'
