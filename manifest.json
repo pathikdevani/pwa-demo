@@ -6,7 +6,7 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"start_url": "/pwa-demo?utm_source=launcher",
-	// "description": "The app that helps you find Repository on github!",
+	"description": "The app that helps you find Repository on github!",
 	"icons": [
 		{
 			"src": "images/icons/icon-72x72.png",
@@ -48,13 +48,10 @@
 			"sizes": "512x512",
 			"type": "image/png"
 		}
+	],
+	"related_applications": [
+		{
+			"platform": "web"
+		}
 	]
-	// "gcm_user_visible_only": true,
-	// "splash_pages": null,
-	// "prefer_related_applications": false,
-	// "related_applications": [
-	// 	{
-	// 		"platform": "web"
-	// 	}
-	// ]
 }
